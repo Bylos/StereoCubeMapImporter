@@ -1,12 +1,13 @@
 // Some copyright should be here...
-#if WITH_EDITOR
+//#if WITH_EDITOR
 
 #pragma once
 
 #include "ModuleManager.h"
 #include "DesktopPlatformModule.h"
-#include "ImageWrapper.h"
-
+//#include "ImageWrapper.h"
+#include "Runtime/ImageWrapper/Public/IImageWrapper.h"
+#include "Runtime/ImageWrapper/Public/IImageWrapperModule.h"
 
 class FToolBarBuilder;
 class FMenuBuilder;
@@ -39,4 +40,4 @@ private:
 	TSharedPtr<class FUICommandList> PluginCommands;
 };
 
-#endif
+//#endif

@@ -1,9 +1,9 @@
 // Some copyright should be here...
-#if WITH_EDITOR
-
-#include "StereoCubeMapImporterPrivatePCH.h"
+//#if WITH_EDITOR
 
 #include "StereoCubeMapImporterStyle.h"
+#include "StereoCubeMapImporterPrivatePCH.h"
+
 #include "SlateGameResources.h"
 #include "IPluginManager.h"
 
@@ -67,4 +67,4 @@ const ISlateStyle& FStereoCubeMapImporterStyle::Get()
 	return *StyleInstance;
 }
 
-#endif
+//#endif

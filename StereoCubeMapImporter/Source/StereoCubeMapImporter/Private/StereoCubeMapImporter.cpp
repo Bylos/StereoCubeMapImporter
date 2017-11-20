@@ -1,6 +1,6 @@
 // Some copyright should be here...
-#if WITH_EDITOR
-
+//#if WITH_EDITOR
+#include "StereoCubeMapImporter.h"
 #include "StereoCubeMapImporterPrivatePCH.h"
 
 #include "SlateBasics.h"
@@ -13,7 +13,8 @@
 
 #include "AssetRegistryModule.h"
 #include "ContentBrowserModule.h"
-
+#include "IContentBrowserSingleton.h"
+#include "Runtime/Engine/Classes/Engine/TextureCube.h"
 
 static const FName StereoCubeMapImporterTabName("Import Stereo Cube");
 
@@ -75,7 +76,7 @@ void FStereoCubeMapImporterModule::PluginButtonClicked()
 		if (FFileHelper::LoadFileToArray(RawFileData, *OutFileNames[0]))
 		{
 			IImageWrapperModule& ImageWrapperModule = FModuleManager::LoadModuleChecked<IImageWrapperModule>(FName("ImageWrapper"));
-			IImageWrapperPtr ImageWrappers[3] =
+			TSharedPtr < IImageWrapper > ImageWrappers[3] =
 			{
 				ImageWrapperModule.CreateImageWrapper(EImageFormat::PNG),
 				ImageWrapperModule.CreateImageWrapper(EImageFormat::BMP),
@@ -348,4 +349,4 @@ void FStereoCubeMapImporterModule::AddToolbarExtension(FToolBarBuilder& Builder)
 
 IMPLEMENT_MODULE(FStereoCubeMapImporterModule, StereoCubeMapImporter)
 
-#endif
+//#endif
